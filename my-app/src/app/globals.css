@@ -148,8 +148,4 @@
   will-change: transform;
 }
 
-/* Add hover effect to move lower */
-.animate-slide:hover {
-  transform: translateY(10px);
-  transition: transform 0.3s ease;
-}
+

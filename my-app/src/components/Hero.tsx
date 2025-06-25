@@ -3,10 +3,29 @@
 import { Button } from '@/components/ui/button';
 import Profile from './Profile';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const Hero = () => {
+  const [copied, setCopied] = useState(false);
   const copyEmail = () => {
-    navigator.clipboard.writeText('kyle.hay@outlook.com');
+    navigator.clipboard.writeText('haykyle917@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const openResume = () => {
+    const win = window.open('', '_blank');
+    if (win) {
+      win.document.title = 'Kyle-Anthony Hay | Resume';
+      const style = win.document.createElement('style');
+      style.innerHTML = `html, body { margin:0; padding:0; overflow:hidden; height:100%; width:100%; } embed { position:absolute; top:0; left:0; width:100%; height:100%; }`;
+      win.document.head.appendChild(style);
+
+      const embed = win.document.createElement('embed');
+      embed.src = '/Kyle-Anthony_Resume.pdf';
+      embed.type = 'application/pdf';
+      win.document.body.appendChild(embed);
+    }
   };
 
   const techIcons = [
@@ -28,7 +47,7 @@ const Hero = () => {
             </p>
             <div className="flex gap-3 pt-2">
               <Button
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => openResume()}
                 className="bg-black text-white hover:bg-black/90 rounded-full h-12 px-6 text-[15px]"
               >
                 Resume →
@@ -38,7 +57,7 @@ const Hero = () => {
                 variant="outline"
                 className="border-[#E5E5E5] hover:bg-[#F5F5F5] rounded-full h-12 px-6 text-[15px]"
               >
-                Copy Email
+                {copied ? 'Copied!' : 'Copy Email'}
               </Button>
             </div>
             
