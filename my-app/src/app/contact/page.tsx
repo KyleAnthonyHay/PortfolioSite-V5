@@ -1,28 +1,21 @@
 'use client';
-import { useState, FormEvent } from 'react';
+import { FormEvent, useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Header from '@/components/Header';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [state, handleSubmit] = useForm("xovwpnrr");
+  const router = useRouter();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // TODO: integrate with email API or backend
-    alert('Thank you for your message!');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  useEffect(() => {
+    if (state.succeeded) {
+      router.push('/');
+    }
+  }, [state.succeeded, router]);
+  
 
   return (
     <>
@@ -44,37 +37,37 @@ export default function ContactPage() {
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  
                   placeholder="John Doe"
                   required
                   className="w-full px-4 py-3 bg-gray-100 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-[#666666]">What's your email?</label>
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  
                   placeholder="John@company.com"
                   required
                   className="w-full px-4 py-3 bg-gray-100 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
             </div>
             <div className="space-y-2">
               <label className="block text-sm font-medium text-[#666666]">What's your message?</label>
               <textarea
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+                
                 placeholder="Your message"
                 required
                 rows={6}
                 className="w-full px-4 py-3 bg-gray-100 border border-transparent rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
             <button
               type="submit"
