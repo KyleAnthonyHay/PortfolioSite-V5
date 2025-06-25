@@ -28,14 +28,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <>
       <Header />
-    <div className="absolute top-6 left-6">
-      <Link href="/" className="text-gray-600 hover:text-gray-800 inline-block">
+    <div className="absolute top-12 left-12">
+      <Link href="/" className="text-gray-600 hover:text-gray-800 inline-block p-2">
         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </Link>
     </div>
-    <section className="py-24">
+    <section className="pt-40 pb-24">
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 space-y-8">
         {/* Project Card */}
         <div className="group relative bg-[#F5F5F5] rounded-[20px] overflow-hidden aspect-[6/4] mx-auto max-w-[720px]">
