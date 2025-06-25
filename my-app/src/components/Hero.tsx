@@ -7,10 +7,26 @@ import { useState } from 'react';
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
-  const copyEmail = () => {
-    navigator.clipboard.writeText('haykyle917@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyEmail = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText('haykyle917@gmail.com');
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = 'haykyle917@gmail.com';
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy email:', error);
+    }
   };
 
   const openResume = () => {
