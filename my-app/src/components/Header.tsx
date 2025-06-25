@@ -23,9 +23,9 @@ const Header = () => {
           <Link href="/projects" className="text-white hover:text-gray-300">
             <FolderIcon />
           </Link>
-          <Link href="/blog" className="text-white hover:text-gray-300">
+          <a href="https://medium.com/@kyleanthonyhay" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
             <PenIcon />
-          </Link>
+          </a>
           <Link href="/contact" className="text-white hover:text-gray-300">
             <EnvelopeIcon />
           </Link>
