@@ -14,7 +14,7 @@ const Header = () => {
           <div className="w-8 h-8 rounded-full overflow-hidden">
             <Image src="/profile.jpg" alt="Kyle-Anthony Hay" width={32} height={32} className="object-cover" />
           </div>
-          <span className="text-white">Kyle-Anthony Hay</span>
+          <span className="hidden sm:inline text-white">Kyle-Anthony Hay</span>
         </div>
         <div className="flex items-center gap-4">
           <Link href="/" className="text-white hover:text-gray-300">
