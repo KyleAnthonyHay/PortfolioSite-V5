@@ -4,7 +4,12 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <section className="py-24 bg-[#F5F5F5]">
+    <section className="pt-24 pb-32 bg-none"
+      
+      style={{
+        background: "linear-gradient(to bottom, white 0px, #F5F5F5 70px, #F5F5F5 100%)",
+      }}
+    >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="max-w-[720px] mx-auto">
           <h2 className="text-[32px] font-medium mb-6">

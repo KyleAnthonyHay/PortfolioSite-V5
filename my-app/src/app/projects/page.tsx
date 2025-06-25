@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 const projects = [
   { id: 1, title: 'SelahNote', image: '/projects/selah-note.png', description: 'SelahNote is an AI notetaker for sermons. It provides file organization, recording summaries, and file upload capabilities to streamline the process of taking notes during sermons.' },
@@ -37,6 +38,7 @@ export default function ProjectsPage() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

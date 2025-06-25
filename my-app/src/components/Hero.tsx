@@ -48,7 +48,7 @@ const Hero = () => {
             <div className="flex gap-3 pt-2">
               <Button
                 onClick={() => openResume()}
-                className="bg-black text-white hover:bg-black/90 rounded-full h-12 px-6 text-[15px]"
+                className="bg-black text-white hover:bg-black/90 rounded-full h-12 px-6 text-[15px] transition-transform transform hover:scale-105 duration-200 ease-in-out"
               >
                 Resume →
               </Button>

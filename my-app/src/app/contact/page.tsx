@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Footer from '@/components/Footer';
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("xovwpnrr");
@@ -78,6 +79,7 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

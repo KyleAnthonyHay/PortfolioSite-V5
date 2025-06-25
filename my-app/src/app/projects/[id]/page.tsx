@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Link from 'next/link';
 
@@ -35,7 +36,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </svg>
       </Link>
     </div>
-    <section className="pt-40 pb-24">
+    <section className="pt-40 pb-40">
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 space-y-8">
         {/* Project Card */}
         <div className="group relative bg-[#F5F5F5] rounded-[20px] overflow-hidden aspect-[6/4] mx-auto max-w-[720px]">
@@ -54,6 +55,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <h1 className="text-[32px] font-medium">{project.title}</h1>
         <p className="text-[20px] leading-[1.6] text-[#666666]">{project.description}</p>
       </div>
+      <Footer />
     </section>
     </>
   );
