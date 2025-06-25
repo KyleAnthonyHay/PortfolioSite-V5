@@ -11,8 +11,8 @@ const Header = () => {
     <header className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
       <nav className="bg-black rounded-full px-6 py-3 flex items-center gap-4">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-xs">
-            KH
+          <div className="w-8 h-8 rounded-full overflow-hidden">
+            <Image src="/profile.jpg" alt="Kyle-Anthony Hay" width={32} height={32} className="object-cover" />
           </div>
           <span className="text-white">Kyle-Anthony Hay</span>
         </div>
