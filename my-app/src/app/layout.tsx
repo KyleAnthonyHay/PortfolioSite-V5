@@ -5,9 +5,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kyle-Anthony Hay - UX Strategy & Design",
-  description: "Helping SaaS Teams Scale Through UX Strategy & Design",
-  keywords: ["UX Design", "UI Design", "Product Design", "SaaS", "Portfolio"],
+  title: "Kyle-Anthony Hay | Portfolio",
+  description: "Software Developer and Entrepreneur",
+  keywords: ["Software Developer", "Entrepreneur", "Portfolio", "Production Company"],
+  icons: {
+    icon: "/profile.jpg",
+  },
 };
 
 export default function RootLayout({

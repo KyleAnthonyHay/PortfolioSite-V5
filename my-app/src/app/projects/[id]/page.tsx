@@ -4,9 +4,10 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 const projects = [
-  { id: 1, title: 'SelahNote', image: '/projects/selah-note.png', description: 'SelahNote is an AI notetaker for sermons. It provides file organization, recording summaries, and file upload capabilities to streamline the process of taking notes during sermons.', github: 'https://github.com/KyleAnthonyHay/Lectra' },
+  { id: 1, title: 'SelahNote', image: '/projects/selah-note.png', description: 'SelahNote is an AI notetaker for sermons. It provides file organization, recording summaries, and file upload capabilities to streamline the process of taking notes during sermons.', github: 'https://selahnote.app' },
   { id: 2, title: 'ExpenseTracker', image: '/projects/expense-tracker.png', description: 'ExpenseTracker is a finance analytics tool that gathers data from an API and displays your monthly transactions on a graph. It also allows you to assign transaction categories for organization.', github: 'https://github.com/KyleAnthonyHay/ExpenseTracker/tree/main/ExpenseTracker' },
   { id: 3, title: 'TheWall', image: '/projects/the-wall.png', description: 'TheWall is a social board application that displays users’ posts to a collective feed called "The Wall." Users can sign up using Gmail.', github: 'https://github.com/KyleAnthonyHay/socialmedia-appV2.0' },
   { id: 4, title: 'CountryApp', image: '/projects/country-viewer.png', description: 'Allows you to view all the countries of the world and their relevant data. Country-relative population is automatically updated via a country data gathering API.', github: 'https://github.com/KyleAnthonyHay/Countries-App' },
@@ -18,11 +19,8 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ id: p.id.toString() }));
 }
 
-interface ProjectPageProps {
-  params: { id: string };
-}
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const idNum = parseInt(params.id, 10);
   const project = projects.find((p) => p.id === idNum);
   if (!project) {
@@ -57,9 +55,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="flex items-center gap-3">
           <h1 className="text-[32px] font-medium">{project.title}</h1>
-          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <FaGithub className="w-7 h-7 text-gray-500 grayscale hover:grayscale-0 transition-all" />
-          </a>
+          {project.id === 1 ? (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+              <FiArrowUpRight className="w-7 h-7 text-gray-500 grayscale hover:grayscale-0 transition-all" />
+            </a>
+          ) : (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+              <FaGithub className="w-7 h-7 text-gray-500 grayscale hover:grayscale-0 transition-all" />
+            </a>
+          )}
         </div>
         <p className="text-[20px] leading-[1.6] text-[#666666]">{project.description}</p>
       </div>
