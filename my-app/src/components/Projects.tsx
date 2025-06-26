@@ -25,6 +25,18 @@ const Projects = () => {
       title: 'Country Viewer',
       image: '/projects/country-viewer.png',
     },
+    {
+      id: 5,
+      title: 'MunchMap',
+      image: '/projects/MunchMap.png',
+      landscape: true,
+    },
+    {
+      id: 6,
+      title: 'QuizCraft',
+      image: '/projects/QuizCraft.png',
+      landscape: true,
+    },
   ];
 
   return (
@@ -39,7 +51,7 @@ const Projects = () => {
   >
             
               <div className="absolute inset-0 flex items-start justify-center pt-16">
-                <div className="relative w-[45%] aspect-[9/19] transform transition-transform duration-800 hover:-translate-y-3">
+                <div className={`relative transform transition-transform duration-800 ${project.landscape ? 'w-[75%] aspect-[16/9] hover:scale-101' : 'w-[45%] aspect-[9/19] hover:-translate-y-3'}`}>
                   <Image
                     src={project.image}
                     alt={project.title}

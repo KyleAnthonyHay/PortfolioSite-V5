@@ -10,12 +10,12 @@ const Header = () => {
   return (
     <header className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
       <nav className="bg-black rounded-full px-6 py-3 flex items-center gap-4">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <div className="w-8 h-8 rounded-full overflow-hidden">
             <Image src="/profile.jpg" alt="Kyle-Anthony Hay" width={32} height={32} className="object-cover" />
           </div>
           <span className="hidden sm:inline text-white">Kyle-Anthony Hay</span>
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <Link href="/" className="text-white hover:text-gray-300">
             <HomeIcon />
