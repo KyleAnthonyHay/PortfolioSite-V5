@@ -44,7 +44,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {/* Project Card */}
         <div className="group relative bg-[#F5F5F5] rounded-[20px] overflow-hidden aspect-[6/4] mx-auto max-w-[720px]">
           <div className={`absolute inset-0 flex justify-center ${project.landscape ? 'items-center' : 'items-start pt-16'}`}>
-            <div className={`relative transform transition-transform duration-800 ${project.landscape ? 'w-[75%] aspect-[16/9] hover:scale-105' : 'w-[45%] aspect-[9/19] hover:-translate-y-3'}`}>
+            <div className={`relative transform transition-transform duration-800 ${project.landscape ? 'w-[75%] aspect-[16/9] hover:scale-102' : 'w-[45%] aspect-[9/19] hover:-translate-y-3'}`}>
               <Image
                 src={project.image}
                 alt={project.title}

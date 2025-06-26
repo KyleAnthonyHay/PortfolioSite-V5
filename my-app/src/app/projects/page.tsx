@@ -9,6 +9,8 @@ const projects = [
   { id: 2, title: 'Expense Tracker', image: '/projects/expense-tracker.png', description: 'ExpenseTracker is a finance analytics tool that gathers data from an API and displays your monthly transactions on a graph. It also allows you to assign transaction categories for organization.', github: 'https://github.com' },
   { id: 3, title: 'The Wall', image: '/projects/the-wall.png', description: 'TheWall is a social board application that displays users’ posts to a collective feed called "The Wall." Users can sign up using Gmail.' },
   { id: 4, title: 'Country Viewer', image: '/projects/country-viewer.png', description: 'Allows you to view all the countries of the world and their relevant data. Country-relative population is automatically updated via a country data gathering API.', github: 'https://github.com' },
+  { id: 5, title: 'MunchMap', image: '/projects/MunchMap.png', description: 'An online food donation platform for restaurants and shelters', github: 'https://github.com/KyleAnthonyHay/MunchMap', landscape: true },
+  { id: 6, title: 'QuizCraft', image: '/projects/QuizCraft.png', description: 'An AI quiz generator that creates a custom quiz determined by the user', github: 'https://github.com/KyleAnthonyHay/QuizCraftAI', landscape: true },
 ];
 
 export default function ProjectsPage() {
@@ -27,8 +29,8 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div key={project.id} className="space-y-6">
                             <div className="group relative bg-[#F5F5F5] rounded-[20px] overflow-hidden aspect-[6/4] mx-auto max-w-[720px]">
-                <div className="absolute inset-0 flex items-start justify-center pt-16">
-                  <div className="relative w-[45%] aspect-[9/19] transform transition-transform duration-800 hover:-translate-y-3">
+                <div className={`absolute inset-0 flex justify-center ${project.landscape ? 'items-center' : 'items-start pt-16'}`}>
+                  <div className={`relative transform transition-transform duration-800 ${project.landscape ? 'w-[75%] aspect-[16/9] hover:scale-105' : 'w-[45%] aspect-[9/19] hover:-translate-y-3'}`}>
                     <Image src={project.image} alt={project.title} fill className="object-cover" />
                   </div>
                 </div>

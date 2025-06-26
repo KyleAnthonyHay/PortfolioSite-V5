@@ -21,7 +21,7 @@ const About = () => {
             Hi, my name is Kyle-Anthony. I'm based in Brooklyn, NY, and I specialize in Swift, Flutter, and web development. I’ve been hacking away at personal projects and taking internships where I can. I’m currently diving into consumer apps and AI integrations to solve problems for both users and companies.
             </p>
             <p>
-            I've also started a company called Annointed Productions, where I create media content and collaborate with individuals and businesses to meet their needs.
+            I've also started a company called <a href="https://annointedproductions.com" target="_blank" rel="noopener noreferrer" className="font-bold">Annointed Productions</a>, where I create media content and collaborate with individuals and businesses to meet their needs.
             </p>
           </div>
 
