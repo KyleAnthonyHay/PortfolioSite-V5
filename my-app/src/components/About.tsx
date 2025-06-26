@@ -18,13 +18,10 @@ const About = () => {
           
           <div className="space-y-6 text-[#666666] text-[20px] leading-[1.6] mb-12">
             <p>
-              Based in Brooklyn, I specialize in Swift, Flutter, and web development—building intuitive products 
-              that blend thoughtful design with solid engineering. My style draws from minimal brands like 
-              Apple and Arc Browser.
+            Hi, my name is Kyle-Anthony. I'm based in Brooklyn, NY, and I specialize in Swift, Flutter, and web development. I’ve been hacking away at personal projects and taking internships where I can. I’m currently diving into consumer apps and AI integrations to solve problems for both users and companies.
             </p>
             <p>
-              I run Anointed Productions, where I create media content, and I collaborate with SaaS founders 
-              and creatives to bring their ideas to life through thoughtful code and design.
+            I've also started a company called Annointed Productions, where I create media content and collaborate with individuals and businesses to meet their needs.
             </p>
           </div>
 

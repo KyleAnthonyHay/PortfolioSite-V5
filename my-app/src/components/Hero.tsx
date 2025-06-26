@@ -56,10 +56,10 @@ const Hero = () => {
           <Profile />
           <div className="space-y-6">
             <h1 className="text-[32px] leading-[1.1] font-normal tracking-[-0.02em]">
-              Helping SaaS Teams Scale Through UX Strategy & Design
+            Solving problems using AI and modern frameworks
             </h1>
             <p className="text-[20px] leading-[1.6] text-[#666666]">
-              I work with early-stage founders, SaaS companies, and product teams to turn complex ideas into thoughtful, conversion-focused interfaces that scale.
+            I'm a software developer who is building, learning and integrating constantly. If you'd like to connect, my info is below.
             </p>
             <div className="flex gap-3 pt-2">
               <Button

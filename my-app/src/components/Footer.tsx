@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTwitter, FaEnvelope, FaMedium } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -48,6 +48,17 @@ const Footer = () => {
               <span className="text-[16px]">X / Twitter</span>
             </div>
             <span className="text-[16px] text-gray-600">Follow developer journey</span>
+          </div>
+        </Link>
+
+        {/* Blog */}
+        <Link href="https://medium.com/@kyleanthonyhay" target="_blank" rel="noopener noreferrer" className="block">
+          <div className="flex items-center justify-between py-4 border-b border-gray-200 hover:text-gray-800 transition-colors">
+            <div className="flex items-center gap-4">
+              <FaMedium className="w-6 h-6 text-gray-700" />
+              <span className="text-[16px]">Medium</span>
+            </div>
+            <span className="text-[16px] text-gray-600">My thoughts and coding tutorials</span>
           </div>
         </Link>
       </div>
